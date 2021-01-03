@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const API_URL = "http://localhost:8080/api/auth/"
 
-const Register = (username, email, password) => {
+const register = (username, email, password) => {
    
     return axios.post(API_URL, {
         username,
@@ -13,7 +13,7 @@ const Register = (username, email, password) => {
    
 }
 
-const Login = (username, password) => {
+const login = (username, password) => {
   return axios
     .post(API_URL + "signin", {
       username,
@@ -28,8 +28,8 @@ const Login = (username, password) => {
     });
 };
 
-const Logout = () => {
+const logout = () => {
   localStorage.removeItem("user");
 };
 
-export const authServices = { Register, Login, Logout };
+export const authServices = { register, login, logout };
